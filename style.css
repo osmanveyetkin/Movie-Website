@@ -1,0 +1,307 @@
+/* referenced by https://bilgisayargenetigi.com */
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Electrolize", sans-serif;
+}
+
+.navbar {
+  background-color: #000;
+  color: white;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar .navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px;
+}
+.navbar .navbar-wrapper .logo {
+  font-size: 30px;
+  color: rgb(255, 70, 70);
+}
+.navbar .navbar-wrapper .menu-list {
+  display: flex;
+  list-style: none;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  padding: 0;
+}
+.navbar .navbar-wrapper .menu-list .menu-list-item {
+  cursor: pointer;
+}
+.navbar .navbar-wrapper .menu-list .menu-list-item:hover {
+  font-weight: bold;
+}
+.navbar .navbar-wrapper .menu-list .menu-list-item.active {
+  font-weight: bold;
+}
+.navbar .profile-container {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.navbar .profile-container .profile-text-container {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  line-height: 1;
+}
+.navbar .profile-container .toggle {
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  position: relative;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navbar .profile-container .toggle .toggle-icon {
+  color: goldenrod;
+}
+.navbar .profile-container .toggle .toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  transition: 0.5s ease all;
+}
+.navbar .profile-container .profile-picture {
+  width: 32px;
+  height: 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.sidebar {
+  background-color: #000;
+  color: white;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  row-gap: 40px;
+  position: fixed;
+  top: 0;
+}
+.sidebar i {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container {
+  background-color: #000;
+  color: #fff;
+}
+.container .content-wrapper {
+  margin-left: 50px;
+}
+.container .featured-content {
+  background: url("img/spiderman.jpg");
+  padding: 50px;
+  height: calc(100vh - 160px);
+  background-size: 100% 100%;
+}
+.container .featured-content .featured-title {
+  width: 400px;
+}
+.container .featured-content .featured-desc {
+  width: 500px;
+  background-color: rgba(145, 142, 142, 0.5);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px 0;
+  color: black;
+}
+.container .featured-content .featured-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.container .featured-content .featured-buttons button {
+  padding: 10px 25px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.container .featured-content .featured-buttons .play-button {
+  background-color: rgba(145, 142, 142, 0.5);
+  border-radius: 20px;
+}
+.container .featured-content .featured-buttons .info-button {
+  background-color: rgba(145, 142, 142, 0.5);
+  border-radius: 20px;
+  color: #ccc;
+}
+.container .movie-list-filter {
+  margin: 20px 0 20px 50px;
+  padding: 20px;
+}
+.container .movie-list-filter select {
+  background-color: #000;
+  color: white;
+  padding: 7px 0;
+  width: 125px;
+}
+.container .movie-list-container {
+  margin-left: 70px;
+}
+.container .movie-list-container .movie-list-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list {
+  list-style: none;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  transform: translateX(0);
+  transition: 1s all ease-in-out;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item {
+  position: relative;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item .movie-item-img {
+  width: 270px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1s all ease-in-out;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item .movie-item-title {
+  background-color: rgba(40, 40, 40, 0.4);
+  padding: 0 10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item .movie-item-buttons {
+  background-color: rgba(40, 40, 40, 0.4);
+  padding: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10%;
+  left: 50px;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item .movie-item-buttons i {
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.5s all ease;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item .movie-item-buttons i:hover {
+  opacity: 1;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item:hover .movie-item-title {
+  opacity: 1;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item:hover .movie-item-buttons {
+  opacity: 1;
+}
+.container .movie-list-container .movie-list-wrapper .movie-list .movie-item:hover .movie-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+.container .movie-list-container .movie-list-wrapper .arrow {
+  width: 100px;
+  display: flex;
+  font-size: 120px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  opacity: 0.5;
+  transition: 0.4s all ease-in;
+  cursor: pointer;
+}
+.container .movie-list-container .movie-list-wrapper .arrow:hover {
+  opacity: 1;
+}
+
+/* DARK MODE */
+.container.active {
+  background-color: #fff;
+}
+.container.active .movie-list-title {
+  color: #000;
+}
+.container.active .movie-list-filter select {
+  background-color: #fff;
+  color: black;
+}
+
+.navbar.active {
+  background-color: #fff;
+  color: #000;
+}
+.navbar.active .toggle {
+  background-color: #000;
+}
+.navbar.active .toggle .toggle-ball {
+  background-color: #fff;
+  transform: translateX(-20px);
+}
+
+.sidebar.active {
+  background-color: #fff;
+}
+.sidebar.active i {
+  color: #000;
+}
+
+/* DARK MODE */
+/*1 responsive start */
+@media only screen and (max-width: 800px) {
+  .menu-container {
+    display: none;
+  }
+  .featured-content {
+    height: 50vh;
+  }
+  #xmedia {
+    width: 200px;
+  }
+  .featured-desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    max-width: 200px;
+    padding: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
